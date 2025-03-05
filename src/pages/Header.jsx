@@ -26,13 +26,13 @@ export default function Header() {
                 <h2>Admission Form</h2>
             </div>
             <div className="btn-container">
-                <button 
-                onClick={addRecordClick}
-                className={isAddRecord ? 'active' : ''}
+                <button
+                    onClick={addRecordClick}
+                    className={isAddRecord ? 'active' : ''}
                 >Add Record</button>
-                <button 
-                onClick={viewRecordClick}
-                className={isViewRecord ? 'active' : ''}
+                <button
+                    onClick={viewRecordClick}
+                    className={isViewRecord ? 'active' : ''}
                 >View Record</button>
             </div>
             {
@@ -94,16 +94,44 @@ export default function Header() {
                             <label htmlFor="">E-mail ID</label>
                             <input type="email" value={recordObj.email} onChange={changeInput} name="email" />
                         </div>
+
                         <div className="input-field">
                             <p>Select Your Gender</p>
-                            <input type="radio" value={recordObj.gender} onChange={changeInput} name='gender' />
-                            <label htmlFor="">Female</label>
-
-                            <input type="radio" value={recordObj.gender} onChange={changeInput} name='gender' />
-                            <label htmlFor="">Male</label>
-
-                            <input type="radio" value={recordObj.gender} onChange={changeInput} name='gender' />
-                            <label htmlFor="">Other</label>
+                            <div className="gender-options">
+                                <div className="gender-option">
+                                    <input
+                                        type="radio"
+                                        id="female"
+                                        value="female"
+                                        onChange={changeInput}
+                                        name="gender"
+                                        checked={recordObj.gender === 'female'}
+                                    />
+                                    <label htmlFor="female">Female</label>
+                                </div>
+                                <div className="gender-option">
+                                    <input
+                                        type="radio"
+                                        id="male"
+                                        value="male"
+                                        onChange={changeInput}
+                                        name="gender"
+                                        checked={recordObj.gender === 'male'}
+                                    />
+                                    <label htmlFor="male">Male</label>
+                                </div>
+                                <div className="gender-option">
+                                    <input
+                                        type="radio"
+                                        id="other"
+                                        value="other"
+                                        name="gender"
+                                        onChange={changeInput} 
+                                        checked={recordObj.gender === 'other'}                                      
+                                    />
+                                    <label htmlFor="other">Other</label>
+                                </div>
+                            </div>
                         </div>
                         <button>Submit</button>
                     </form>
@@ -134,26 +162,26 @@ export default function Header() {
                         <tbody>
                             {
                                 records.length > 0 ?
-                                (
-                                    records.map((item, index) => {
-                                        return (
-                                            <tr key={index}>
-                                                <td>{index+1}</td>
-                                                <td>{item.fullname}</td>
-                                                <td>{item.mobile}</td>
-                                                <td>
-                                                    <button>View Class</button>
-                                                </td>
-    
-                                            </tr>
-                                        )
-                                    })
-                                ) :
-                                (
-                                    <tr>
-                                        <td colSpan={3}>No Records Available !!</td>
-                                    </tr>
-                                )                               
+                                    (
+                                        records.map((item, index) => {
+                                            return (
+                                                <tr key={index}>
+                                                    <td>{index + 1}</td>
+                                                    <td>{item.fullname}</td>
+                                                    <td>{item.mobile}</td>
+                                                    <td>
+                                                        <button>View Class</button>
+                                                    </td>
+
+                                                </tr>
+                                            )
+                                        })
+                                    ) :
+                                    (
+                                        <tr>
+                                            <td colSpan={3}>No Records Available !!</td>
+                                        </tr>
+                                    )
                             }
                         </tbody>
                     </table>

@@ -6,14 +6,16 @@
     place-content: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.45);
 }
+.header h2{
+    color: white;
+}
 .btn-container{
     width: 100%;
-    margin: 10px 0px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
 }
 .btn-container button{
     padding: 12px 30px;
@@ -28,21 +30,15 @@
     transition: all ease-in 0.4s;
 }
 .btn-container .active{
-    padding: 12px 30px;
     background: steelblue;
     border: 2px solid steelblue;
     color: white;
-    font-weight: 700;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.45);
-    outline: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all ease-in 0.4s;
+  
 }
 .add-record-component{
     margin: 10px auto;
     width: 440px;
-    height: 450px;
+    height: 470px;
     border-radius: 4px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.45);
     overflow: hidden;
@@ -50,11 +46,12 @@
 }
 .add-record-component .title{
     width: 100%;
-    height: 45px;
+    height: 55px;
     background-color: steelblue;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 .add-record-component form{
     margin: 0px 0px;
@@ -81,22 +78,39 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
-.add-record-component form .input-field input[type="radio"]{
+/* .add-record-component form .input-field input[type="radio"]{
     padding: 8px;
     gap: 50px;
     margin-left: 10px;
+} */
+ 
+  
+.input-field p {
+    font-size: 16px;
+    font-weight: bold;
 }
+.gender-options {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.gender-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+} 
 .add-record-component form button{
-    width: 200px;
-    margin-left: 60px;
-    margin-top: 10px;
+    width: 100%;
+    /* margin-left: 60px; */
+    margin-top: 15px;
     padding: 8px 15px;
     font-size: 18px;
     background: steelblue;
     outline: none;
     border: 2px solid steelblue;
+    border-radius: 5px;
     cursor: pointer;
-    color: black;
+    color: white;
 }
 .add-record-component form button:hover{
     background: white;
@@ -114,11 +128,12 @@
 }
 .view-record-component .title{
     width: 100%;
-    height: 45px;
+    height: 55px;
     background-color: steelblue;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 .view-record-component table{
     width: 90%;
@@ -146,4 +161,93 @@
     border-radius: 3px;
     cursor: pointer;
     font-weight: 700;
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .add-record-component {
+        width: 80%;
+        height: auto;
+    }
+
+    .view-record-component {
+        width: 80%;
+        height: auto;
+    }
+    
+
+    .add-record-component form {
+        padding: 10px 20px;
+    }
+
+    .add-record-component form .input-field input[type="radio"] {
+        padding: 4px !important;
+        margin-left: 5px;
+    }
+    .header{
+        height: 55px;
+        font-size: 0.9rem;
+    }
+    
+
+    .btn-container{
+        height: 80px;
+        gap: 30px;
+    }
+    
+    .btn-container button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header{
+        width: 100% !important;
+        height: 50px;
+        font-size: 0.85rem;
+    }
+
+    .btn-container{
+        display: flex;
+        align-items: center;
+
+        margin-top: 60px;
+        flex-direction: row;
+        height: auto;
+        gap: 45px;
+    }
+    
+    .btn-container button {
+        width: 30%;
+        padding: 10px;
+    }
+
+    .add-record-component {
+        width: 85%;
+        height: auto;
+        margin: 40px auto;
+    }   
+    .add-record-component form {
+        padding: 10px 30px !important;
+    }
+    .add-record-component form .input-field input{
+        width: 90%;
+    }
+    .gender-options {
+          flex-direction: row;
+          gap: 10px;
+    }
+    .view-record-component {
+        width: 95%;
+        height: auto;
+        margin: 40px auto;
+    }
+    
+    .view-record-component table {
+        width: 95%;
+        margin: 10px auto;
+    }
 }
